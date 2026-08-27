@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { AppProvider } from "../lib/store";
 import { AppShell } from "../components/AppShell";
+import { Logo } from "../components/Logo";
 import { asset } from "../lib/utils";
 
 
@@ -20,6 +21,7 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
+        <Logo size={40} className="mx-auto mb-6" />
         <h1 className="text-7xl font-bold text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
         <p className="mt-2 text-sm text-muted-foreground">
@@ -48,6 +50,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
+        <Logo size={40} className="mx-auto mb-6" />
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
           This page didn't load
         </h1>
@@ -84,18 +87,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "viewport",
         content: "width=device-width, initial-scale=1, viewport-fit=cover",
       },
-      { title: "Mobile App Starter" },
+      { title: "Longevity Capital Insurance" },
       {
         name: "description",
-        content: "Clean mobile app starter. This is the starting point for a new project.",
+        content: "Medicare, Life, Health, Home, Auto & More — work with experienced insurance experts in Savannah, GA.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#f7f7f8" },
+      { name: "theme-color", content: "#0B0E1A" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: asset("/favicon.ico"), type: "image/x-icon" },
+      { rel: "icon", href: asset("/logo.png"), type: "image/png" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap",
+      },
     ],
   }),
 

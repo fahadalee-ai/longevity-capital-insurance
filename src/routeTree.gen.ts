@@ -10,33 +10,556 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AgentRouteImport } from './routes/agent'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
+import { Route as HomeRouteImport } from './routes/home'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ReferralRouteImport } from './routes/referral'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as VerifyRouteImport } from './routes/verify'
+import { Route as WelcomeRouteImport } from './routes/welcome'
+import { Route as AppointmentsIndexRouteImport } from './routes/appointments/index'
+import { Route as AppointmentsBookRouteImport } from './routes/appointments/book'
+import { Route as AppointmentsConfirmRouteImport } from './routes/appointments/confirm'
+import { Route as CardsIdRouteImport } from './routes/cards/$id'
+import { Route as ClaimsIndexRouteImport } from './routes/claims/index'
+import { Route as ClaimsIdRouteImport } from './routes/claims/$id'
+import { Route as ClaimsNewRouteImport } from './routes/claims/new'
+import { Route as DocumentsIndexRouteImport } from './routes/documents/index'
+import { Route as DocumentsUploadRouteImport } from './routes/documents/upload'
+import { Route as MessagesIndexRouteImport } from './routes/messages/index'
+import { Route as PaymentsIndexRouteImport } from './routes/payments/index'
+import { Route as PaymentsHistoryRouteImport } from './routes/payments/history'
+import { Route as PaymentsMethodsRouteImport } from './routes/payments/methods'
+import { Route as PaymentsPayRouteImport } from './routes/payments/pay'
+import { Route as PoliciesIndexRouteImport } from './routes/policies/index'
+import { Route as PoliciesIdRouteImport } from './routes/policies/$id'
+import { Route as ProductsIndexRouteImport } from './routes/products/index'
+import { Route as ProductsSlugRouteImport } from './routes/products/$slug'
+import { Route as ProfilePasswordRouteImport } from './routes/profile/password'
+import { Route as QuoteIndexRouteImport } from './routes/quote/index'
+import { Route as QuoteConfirmRouteImport } from './routes/quote/confirm'
+import { Route as QuotesIndexRouteImport } from './routes/quotes/index'
+import { Route as QuotesIdRouteImport } from './routes/quotes/$id'
+import { Route as RenewalIdRouteImport } from './routes/renewal/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AgentRoute = AgentRouteImport.update({
+  id: '/agent',
+  path: '/agent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeRoute = HomeRouteImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReferralRoute = ReferralRouteImport.update({
+  id: '/referral',
+  path: '/referral',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifyRoute = VerifyRouteImport.update({
+  id: '/verify',
+  path: '/verify',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WelcomeRoute = WelcomeRouteImport.update({
+  id: '/welcome',
+  path: '/welcome',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppointmentsIndexRoute = AppointmentsIndexRouteImport.update({
+  id: '/appointments/',
+  path: '/appointments/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppointmentsBookRoute = AppointmentsBookRouteImport.update({
+  id: '/appointments/book',
+  path: '/appointments/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppointmentsConfirmRoute = AppointmentsConfirmRouteImport.update({
+  id: '/appointments/confirm',
+  path: '/appointments/confirm',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CardsIdRoute = CardsIdRouteImport.update({
+  id: '/cards/$id',
+  path: '/cards/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClaimsIndexRoute = ClaimsIndexRouteImport.update({
+  id: '/claims/',
+  path: '/claims/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClaimsIdRoute = ClaimsIdRouteImport.update({
+  id: '/claims/$id',
+  path: '/claims/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClaimsNewRoute = ClaimsNewRouteImport.update({
+  id: '/claims/new',
+  path: '/claims/new',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentsIndexRoute = DocumentsIndexRouteImport.update({
+  id: '/documents/',
+  path: '/documents/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentsUploadRoute = DocumentsUploadRouteImport.update({
+  id: '/documents/upload',
+  path: '/documents/upload',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MessagesIndexRoute = MessagesIndexRouteImport.update({
+  id: '/messages/',
+  path: '/messages/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentsIndexRoute = PaymentsIndexRouteImport.update({
+  id: '/payments/',
+  path: '/payments/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentsHistoryRoute = PaymentsHistoryRouteImport.update({
+  id: '/payments/history',
+  path: '/payments/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentsMethodsRoute = PaymentsMethodsRouteImport.update({
+  id: '/payments/methods',
+  path: '/payments/methods',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentsPayRoute = PaymentsPayRouteImport.update({
+  id: '/payments/pay',
+  path: '/payments/pay',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliciesIndexRoute = PoliciesIndexRouteImport.update({
+  id: '/policies/',
+  path: '/policies/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliciesIdRoute = PoliciesIdRouteImport.update({
+  id: '/policies/$id',
+  path: '/policies/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/products/',
+  path: '/products/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsSlugRoute = ProductsSlugRouteImport.update({
+  id: '/products/$slug',
+  path: '/products/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfilePasswordRoute = ProfilePasswordRouteImport.update({
+  id: '/password',
+  path: '/password',
+  getParentRoute: () => ProfileRoute,
+} as any)
+const QuoteIndexRoute = QuoteIndexRouteImport.update({
+  id: '/quote/',
+  path: '/quote/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuoteConfirmRoute = QuoteConfirmRouteImport.update({
+  id: '/quote/confirm',
+  path: '/quote/confirm',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuotesIndexRoute = QuotesIndexRouteImport.update({
+  id: '/quotes/',
+  path: '/quotes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuotesIdRoute = QuotesIdRouteImport.update({
+  id: '/quotes/$id',
+  path: '/quotes/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RenewalIdRoute = RenewalIdRouteImport.update({
+  id: '/renewal/$id',
+  path: '/renewal/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/agent': typeof AgentRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/privacy': typeof PrivacyRoute
+  '/profile': typeof ProfileRouteWithChildren
+  '/referral': typeof ReferralRoute
+  '/register': typeof RegisterRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/terms': typeof TermsRoute
+  '/verify': typeof VerifyRoute
+  '/welcome': typeof WelcomeRoute
+  '/appointments/book': typeof AppointmentsBookRoute
+  '/appointments/confirm': typeof AppointmentsConfirmRoute
+  '/cards/$id': typeof CardsIdRoute
+  '/claims/$id': typeof ClaimsIdRoute
+  '/claims/new': typeof ClaimsNewRoute
+  '/documents/upload': typeof DocumentsUploadRoute
+  '/payments/history': typeof PaymentsHistoryRoute
+  '/payments/methods': typeof PaymentsMethodsRoute
+  '/payments/pay': typeof PaymentsPayRoute
+  '/policies/$id': typeof PoliciesIdRoute
+  '/products/$slug': typeof ProductsSlugRoute
+  '/profile/password': typeof ProfilePasswordRoute
+  '/quote/confirm': typeof QuoteConfirmRoute
+  '/quotes/$id': typeof QuotesIdRoute
+  '/renewal/$id': typeof RenewalIdRoute
+  '/appointments/': typeof AppointmentsIndexRoute
+  '/claims/': typeof ClaimsIndexRoute
+  '/documents/': typeof DocumentsIndexRoute
+  '/messages/': typeof MessagesIndexRoute
+  '/payments/': typeof PaymentsIndexRoute
+  '/policies/': typeof PoliciesIndexRoute
+  '/products/': typeof ProductsIndexRoute
+  '/quote/': typeof QuoteIndexRoute
+  '/quotes/': typeof QuotesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/agent': typeof AgentRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/privacy': typeof PrivacyRoute
+  '/profile': typeof ProfileRouteWithChildren
+  '/referral': typeof ReferralRoute
+  '/register': typeof RegisterRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/terms': typeof TermsRoute
+  '/verify': typeof VerifyRoute
+  '/welcome': typeof WelcomeRoute
+  '/appointments/book': typeof AppointmentsBookRoute
+  '/appointments/confirm': typeof AppointmentsConfirmRoute
+  '/cards/$id': typeof CardsIdRoute
+  '/claims/$id': typeof ClaimsIdRoute
+  '/claims/new': typeof ClaimsNewRoute
+  '/documents/upload': typeof DocumentsUploadRoute
+  '/payments/history': typeof PaymentsHistoryRoute
+  '/payments/methods': typeof PaymentsMethodsRoute
+  '/payments/pay': typeof PaymentsPayRoute
+  '/policies/$id': typeof PoliciesIdRoute
+  '/products/$slug': typeof ProductsSlugRoute
+  '/profile/password': typeof ProfilePasswordRoute
+  '/quote/confirm': typeof QuoteConfirmRoute
+  '/quotes/$id': typeof QuotesIdRoute
+  '/renewal/$id': typeof RenewalIdRoute
+  '/appointments': typeof AppointmentsIndexRoute
+  '/claims': typeof ClaimsIndexRoute
+  '/documents': typeof DocumentsIndexRoute
+  '/messages': typeof MessagesIndexRoute
+  '/payments': typeof PaymentsIndexRoute
+  '/policies': typeof PoliciesIndexRoute
+  '/products': typeof ProductsIndexRoute
+  '/quote': typeof QuoteIndexRoute
+  '/quotes': typeof QuotesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/agent': typeof AgentRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/privacy': typeof PrivacyRoute
+  '/profile': typeof ProfileRouteWithChildren
+  '/referral': typeof ReferralRoute
+  '/register': typeof RegisterRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/terms': typeof TermsRoute
+  '/verify': typeof VerifyRoute
+  '/welcome': typeof WelcomeRoute
+  '/appointments/book': typeof AppointmentsBookRoute
+  '/appointments/confirm': typeof AppointmentsConfirmRoute
+  '/cards/$id': typeof CardsIdRoute
+  '/claims/$id': typeof ClaimsIdRoute
+  '/claims/new': typeof ClaimsNewRoute
+  '/documents/upload': typeof DocumentsUploadRoute
+  '/payments/history': typeof PaymentsHistoryRoute
+  '/payments/methods': typeof PaymentsMethodsRoute
+  '/payments/pay': typeof PaymentsPayRoute
+  '/policies/$id': typeof PoliciesIdRoute
+  '/products/$slug': typeof ProductsSlugRoute
+  '/profile/password': typeof ProfilePasswordRoute
+  '/quote/confirm': typeof QuoteConfirmRoute
+  '/quotes/$id': typeof QuotesIdRoute
+  '/renewal/$id': typeof RenewalIdRoute
+  '/appointments/': typeof AppointmentsIndexRoute
+  '/claims/': typeof ClaimsIndexRoute
+  '/documents/': typeof DocumentsIndexRoute
+  '/messages/': typeof MessagesIndexRoute
+  '/payments/': typeof PaymentsIndexRoute
+  '/policies/': typeof PoliciesIndexRoute
+  '/products/': typeof ProductsIndexRoute
+  '/quote/': typeof QuoteIndexRoute
+  '/quotes/': typeof QuotesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/agent'
+    | '/contact'
+    | '/faq'
+    | '/forgot-password'
+    | '/home'
+    | '/login'
+    | '/notifications'
+    | '/onboarding'
+    | '/privacy'
+    | '/profile'
+    | '/referral'
+    | '/register'
+    | '/reset-password'
+    | '/terms'
+    | '/verify'
+    | '/welcome'
+    | '/appointments/book'
+    | '/appointments/confirm'
+    | '/cards/$id'
+    | '/claims/$id'
+    | '/claims/new'
+    | '/documents/upload'
+    | '/payments/history'
+    | '/payments/methods'
+    | '/payments/pay'
+    | '/policies/$id'
+    | '/products/$slug'
+    | '/profile/password'
+    | '/quote/confirm'
+    | '/quotes/$id'
+    | '/renewal/$id'
+    | '/appointments/'
+    | '/claims/'
+    | '/documents/'
+    | '/messages/'
+    | '/payments/'
+    | '/policies/'
+    | '/products/'
+    | '/quote/'
+    | '/quotes/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/agent'
+    | '/contact'
+    | '/faq'
+    | '/forgot-password'
+    | '/home'
+    | '/login'
+    | '/notifications'
+    | '/onboarding'
+    | '/privacy'
+    | '/profile'
+    | '/referral'
+    | '/register'
+    | '/reset-password'
+    | '/terms'
+    | '/verify'
+    | '/welcome'
+    | '/appointments/book'
+    | '/appointments/confirm'
+    | '/cards/$id'
+    | '/claims/$id'
+    | '/claims/new'
+    | '/documents/upload'
+    | '/payments/history'
+    | '/payments/methods'
+    | '/payments/pay'
+    | '/policies/$id'
+    | '/products/$slug'
+    | '/profile/password'
+    | '/quote/confirm'
+    | '/quotes/$id'
+    | '/renewal/$id'
+    | '/appointments'
+    | '/claims'
+    | '/documents'
+    | '/messages'
+    | '/payments'
+    | '/policies'
+    | '/products'
+    | '/quote'
+    | '/quotes'
+  id:
+    | '__root__'
+    | '/'
+    | '/agent'
+    | '/contact'
+    | '/faq'
+    | '/forgot-password'
+    | '/home'
+    | '/login'
+    | '/notifications'
+    | '/onboarding'
+    | '/privacy'
+    | '/profile'
+    | '/referral'
+    | '/register'
+    | '/reset-password'
+    | '/terms'
+    | '/verify'
+    | '/welcome'
+    | '/appointments/book'
+    | '/appointments/confirm'
+    | '/cards/$id'
+    | '/claims/$id'
+    | '/claims/new'
+    | '/documents/upload'
+    | '/payments/history'
+    | '/payments/methods'
+    | '/payments/pay'
+    | '/policies/$id'
+    | '/products/$slug'
+    | '/profile/password'
+    | '/quote/confirm'
+    | '/quotes/$id'
+    | '/renewal/$id'
+    | '/appointments/'
+    | '/claims/'
+    | '/documents/'
+    | '/messages/'
+    | '/payments/'
+    | '/policies/'
+    | '/products/'
+    | '/quote/'
+    | '/quotes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AgentRoute: typeof AgentRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
+  HomeRoute: typeof HomeRoute
+  LoginRoute: typeof LoginRoute
+  NotificationsRoute: typeof NotificationsRoute
+  OnboardingRoute: typeof OnboardingRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ProfileRoute: typeof ProfileRouteWithChildren
+  ReferralRoute: typeof ReferralRoute
+  RegisterRoute: typeof RegisterRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  TermsRoute: typeof TermsRoute
+  VerifyRoute: typeof VerifyRoute
+  WelcomeRoute: typeof WelcomeRoute
+  AppointmentsBookRoute: typeof AppointmentsBookRoute
+  AppointmentsConfirmRoute: typeof AppointmentsConfirmRoute
+  CardsIdRoute: typeof CardsIdRoute
+  ClaimsIdRoute: typeof ClaimsIdRoute
+  ClaimsNewRoute: typeof ClaimsNewRoute
+  DocumentsUploadRoute: typeof DocumentsUploadRoute
+  PaymentsHistoryRoute: typeof PaymentsHistoryRoute
+  PaymentsMethodsRoute: typeof PaymentsMethodsRoute
+  PaymentsPayRoute: typeof PaymentsPayRoute
+  PoliciesIdRoute: typeof PoliciesIdRoute
+  ProductsSlugRoute: typeof ProductsSlugRoute
+  QuoteConfirmRoute: typeof QuoteConfirmRoute
+  QuotesIdRoute: typeof QuotesIdRoute
+  RenewalIdRoute: typeof RenewalIdRoute
+  AppointmentsIndexRoute: typeof AppointmentsIndexRoute
+  ClaimsIndexRoute: typeof ClaimsIndexRoute
+  DocumentsIndexRoute: typeof DocumentsIndexRoute
+  MessagesIndexRoute: typeof MessagesIndexRoute
+  PaymentsIndexRoute: typeof PaymentsIndexRoute
+  PoliciesIndexRoute: typeof PoliciesIndexRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
+  QuoteIndexRoute: typeof QuoteIndexRoute
+  QuotesIndexRoute: typeof QuotesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +571,341 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/agent': {
+      id: '/agent'
+      path: '/agent'
+      fullPath: '/agent'
+      preLoaderRoute: typeof AgentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/referral': {
+      id: '/referral'
+      path: '/referral'
+      fullPath: '/referral'
+      preLoaderRoute: typeof ReferralRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verify': {
+      id: '/verify'
+      path: '/verify'
+      fullPath: '/verify'
+      preLoaderRoute: typeof VerifyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/welcome': {
+      id: '/welcome'
+      path: '/welcome'
+      fullPath: '/welcome'
+      preLoaderRoute: typeof WelcomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/appointments/': {
+      id: '/appointments/'
+      path: '/appointments'
+      fullPath: '/appointments/'
+      preLoaderRoute: typeof AppointmentsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/appointments/book': {
+      id: '/appointments/book'
+      path: '/appointments/book'
+      fullPath: '/appointments/book'
+      preLoaderRoute: typeof AppointmentsBookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/appointments/confirm': {
+      id: '/appointments/confirm'
+      path: '/appointments/confirm'
+      fullPath: '/appointments/confirm'
+      preLoaderRoute: typeof AppointmentsConfirmRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cards/$id': {
+      id: '/cards/$id'
+      path: '/cards/$id'
+      fullPath: '/cards/$id'
+      preLoaderRoute: typeof CardsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/claims/': {
+      id: '/claims/'
+      path: '/claims'
+      fullPath: '/claims/'
+      preLoaderRoute: typeof ClaimsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/claims/$id': {
+      id: '/claims/$id'
+      path: '/claims/$id'
+      fullPath: '/claims/$id'
+      preLoaderRoute: typeof ClaimsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/claims/new': {
+      id: '/claims/new'
+      path: '/claims/new'
+      fullPath: '/claims/new'
+      preLoaderRoute: typeof ClaimsNewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documents/': {
+      id: '/documents/'
+      path: '/documents'
+      fullPath: '/documents/'
+      preLoaderRoute: typeof DocumentsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documents/upload': {
+      id: '/documents/upload'
+      path: '/documents/upload'
+      fullPath: '/documents/upload'
+      preLoaderRoute: typeof DocumentsUploadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/messages/': {
+      id: '/messages/'
+      path: '/messages'
+      fullPath: '/messages/'
+      preLoaderRoute: typeof MessagesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payments/': {
+      id: '/payments/'
+      path: '/payments'
+      fullPath: '/payments/'
+      preLoaderRoute: typeof PaymentsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payments/history': {
+      id: '/payments/history'
+      path: '/payments/history'
+      fullPath: '/payments/history'
+      preLoaderRoute: typeof PaymentsHistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payments/methods': {
+      id: '/payments/methods'
+      path: '/payments/methods'
+      fullPath: '/payments/methods'
+      preLoaderRoute: typeof PaymentsMethodsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payments/pay': {
+      id: '/payments/pay'
+      path: '/payments/pay'
+      fullPath: '/payments/pay'
+      preLoaderRoute: typeof PaymentsPayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/policies/': {
+      id: '/policies/'
+      path: '/policies'
+      fullPath: '/policies/'
+      preLoaderRoute: typeof PoliciesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/policies/$id': {
+      id: '/policies/$id'
+      path: '/policies/$id'
+      fullPath: '/policies/$id'
+      preLoaderRoute: typeof PoliciesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/': {
+      id: '/products/'
+      path: '/products'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/$slug': {
+      id: '/products/$slug'
+      path: '/products/$slug'
+      fullPath: '/products/$slug'
+      preLoaderRoute: typeof ProductsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile/password': {
+      id: '/profile/password'
+      path: '/password'
+      fullPath: '/profile/password'
+      preLoaderRoute: typeof ProfilePasswordRouteImport
+      parentRoute: typeof ProfileRoute
+    }
+    '/quote/': {
+      id: '/quote/'
+      path: '/quote'
+      fullPath: '/quote/'
+      preLoaderRoute: typeof QuoteIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quote/confirm': {
+      id: '/quote/confirm'
+      path: '/quote/confirm'
+      fullPath: '/quote/confirm'
+      preLoaderRoute: typeof QuoteConfirmRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quotes/': {
+      id: '/quotes/'
+      path: '/quotes'
+      fullPath: '/quotes/'
+      preLoaderRoute: typeof QuotesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quotes/$id': {
+      id: '/quotes/$id'
+      path: '/quotes/$id'
+      fullPath: '/quotes/$id'
+      preLoaderRoute: typeof QuotesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/renewal/$id': {
+      id: '/renewal/$id'
+      path: '/renewal/$id'
+      fullPath: '/renewal/$id'
+      preLoaderRoute: typeof RenewalIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface ProfileRouteChildren {
+  ProfilePasswordRoute: typeof ProfilePasswordRoute
+}
+
+const ProfileRouteChildren: ProfileRouteChildren = {
+  ProfilePasswordRoute: ProfilePasswordRoute,
+}
+
+const ProfileRouteWithChildren =
+  ProfileRoute._addFileChildren(ProfileRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AgentRoute: AgentRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
+  HomeRoute: HomeRoute,
+  LoginRoute: LoginRoute,
+  NotificationsRoute: NotificationsRoute,
+  OnboardingRoute: OnboardingRoute,
+  PrivacyRoute: PrivacyRoute,
+  ProfileRoute: ProfileRouteWithChildren,
+  ReferralRoute: ReferralRoute,
+  RegisterRoute: RegisterRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
+  TermsRoute: TermsRoute,
+  VerifyRoute: VerifyRoute,
+  WelcomeRoute: WelcomeRoute,
+  AppointmentsBookRoute: AppointmentsBookRoute,
+  AppointmentsConfirmRoute: AppointmentsConfirmRoute,
+  CardsIdRoute: CardsIdRoute,
+  ClaimsIdRoute: ClaimsIdRoute,
+  ClaimsNewRoute: ClaimsNewRoute,
+  DocumentsUploadRoute: DocumentsUploadRoute,
+  PaymentsHistoryRoute: PaymentsHistoryRoute,
+  PaymentsMethodsRoute: PaymentsMethodsRoute,
+  PaymentsPayRoute: PaymentsPayRoute,
+  PoliciesIdRoute: PoliciesIdRoute,
+  ProductsSlugRoute: ProductsSlugRoute,
+  QuoteConfirmRoute: QuoteConfirmRoute,
+  QuotesIdRoute: QuotesIdRoute,
+  RenewalIdRoute: RenewalIdRoute,
+  AppointmentsIndexRoute: AppointmentsIndexRoute,
+  ClaimsIndexRoute: ClaimsIndexRoute,
+  DocumentsIndexRoute: DocumentsIndexRoute,
+  MessagesIndexRoute: MessagesIndexRoute,
+  PaymentsIndexRoute: PaymentsIndexRoute,
+  PoliciesIndexRoute: PoliciesIndexRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
+  QuoteIndexRoute: QuoteIndexRoute,
+  QuotesIndexRoute: QuotesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

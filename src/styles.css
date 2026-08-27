@@ -3,14 +3,14 @@
 @import "tw-animate-css";
 
 @theme inline {
-  --radius: 4px;
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 4px;
-  --radius-xl: 4px;
-  --radius-2xl: 4px;
-  --radius-3xl: 4px;
-  --radius-4xl: 4px;
+  --radius: 8px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+  --radius-2xl: 8px;
+  --radius-3xl: 8px;
+  --radius-4xl: 8px;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -28,6 +28,7 @@
   --color-dim: var(--dim);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-dark: var(--accent-dark);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-success: var(--success);
@@ -35,61 +36,63 @@
   --color-danger: var(--danger);
   --color-ink: var(--ink);
   --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
   --color-border: var(--border-light);
   --color-border-dark: var(--border-dark);
   --color-input: var(--border-light);
   --color-ring: var(--primary);
 
-  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --radius: 4px;
-  --brand-blue: #1b75ba;
-  --brand-orange: #f05a2a;
-  --status-success: #3b9e63;
-  --status-warning: #f05a2a;
-  --status-error: #e24b4a;
-
-  --primary: #1b75ba;
-  --primary-foreground: #f5f5f5;
-  --primary-dark: #155d94;
-  --accent: #f05a2a;
-  --accent-foreground: #f5f5f5;
-  --ink: #0f1115;
-  --surface: #1a1d23;
-  --background: #0f1115;
-  --foreground: #f5f5f5;
-  --card: #1a1d23;
-  --card-foreground: #f5f5f5;
-  --popover: #1a1d23;
-  --popover-foreground: #f5f5f5;
-  --secondary: #1a1d23;
-  --secondary-foreground: #f5f5f5;
-  --muted: #23262e;
-  --muted-foreground: #9ca3af;
-  --dim: #6b7280;
-  --destructive: #e24b4a;
-  --destructive-foreground: #f5f5f5;
-  --success: #3b9e63;
-  --warning: #f05a2a;
-  --danger: #e24b4a;
-  --border-light: rgba(255, 255, 255, 0.08);
-  --border-dark: rgba(255, 255, 255, 0.08);
-  --sidebar: #1a1d23;
-  --sidebar-foreground: #f5f5f5;
-  --sidebar-primary: #1b75ba;
-  --sidebar-primary-foreground: #f5f5f5;
-  --sidebar-accent: #23262e;
-  --sidebar-accent-foreground: #f5f5f5;
-  --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: #1b75ba;
+  --radius: 8px;
+  --primary: #24319f;
+  --primary-foreground: #ffffff;
+  --primary-dark: #1a2578;
+  --accent: #ed1c22;
+  --accent-foreground: #ffffff;
+  --accent-dark: #c4151a;
+  --ink: #0b0e1a;
+  --surface: #131736;
+  --surface-elevated: #1b2050;
+  --background: #0b0e1a;
+  --foreground: #ffffff;
+  --card: #131736;
+  --card-foreground: #ffffff;
+  --popover: #1b2050;
+  --popover-foreground: #ffffff;
+  --secondary: #131736;
+  --secondary-foreground: #ffffff;
+  --muted: #1b2050;
+  --muted-foreground: #a8add1;
+  --dim: #6b7099;
+  --destructive: #ed1c22;
+  --destructive-foreground: #ffffff;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ed1c22;
+  --border-light: #262c5c;
+  --border-dark: #262c5c;
+  --sidebar: #131736;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #24319f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1b2050;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #262c5c;
+  --sidebar-ring: #24319f;
 }
 
 @layer base {
   * {
     border-color: var(--border-light);
+    scrollbar-width: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
   }
 
   html,
@@ -106,8 +109,7 @@
   h4,
   .font-display {
     font-family: var(--font-display);
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     line-height: 1.2;
   }
 
@@ -125,11 +127,31 @@
   }
 }
 
+@utility hero-overlay {
+  background: linear-gradient(to top, rgba(11, 14, 26, 0.95) 0%, rgba(11, 14, 26, 0.35) 42%, transparent 72%);
+}
+
 @keyframes splash-bar {
   0% {
-    transform: translateX(-100%);
+    transform: scaleX(0);
+    transform-origin: left;
   }
   100% {
-    transform: translateX(280%);
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }

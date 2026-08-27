@@ -1,8 +1,9 @@
 import { useCanGoBack, useRouter } from "@tanstack/react-router";
 import { ArrowLeft, Eye, EyeOff, Lock } from "lucide-react";
 import { useState, type InputHTMLAttributes, type ReactNode } from "react";
-import { cn } from "@/lib/utils";
+import { Logo } from "@/components/Logo";
 import { Field, inputClass } from "@/components/kit";
+import { cn } from "@/lib/utils";
 
 export function AuthShell({
   title,
@@ -22,18 +23,26 @@ export function AuthShell({
 
   return (
     <div className="relative min-h-dvh bg-background px-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-[max(1.5rem,env(safe-area-inset-top))]">
-      {showBack && (
-        <button
-          type="button"
-          aria-label="Go back"
-          onClick={() => (canGoBack ? router.history.back() : router.navigate({ to: "/" }))}
-          className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-card text-foreground"
-        >
-          <ArrowLeft size={18} strokeWidth={2} />
-        </button>
-      )}
+      <div className="mb-6 flex items-center">
+        {showBack ? (
+          <button
+            type="button"
+            aria-label="Go back"
+            onClick={() => (canGoBack ? router.history.back() : router.navigate({ to: "/welcome" }))}
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-white"
+          >
+            <ArrowLeft size={18} strokeWidth={2} />
+          </button>
+        ) : (
+          <span className="w-10" />
+        )}
+        <div className="flex flex-1 justify-center">
+          <Logo size={28} compact />
+        </div>
+        <span className="w-10" />
+      </div>
 
-      <h1 className="text-3xl font-semibold tracking-tight text-foreground">{title}</h1>
+      <h1 className="font-display text-2xl font-semibold tracking-tight text-white">{title}</h1>
       {subtitle && <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{subtitle}</p>}
       <div className="mt-6">{children}</div>
       {footer}
@@ -49,7 +58,7 @@ export function AuthInput({
   return (
     <div className="relative">
       {icon && (
-        <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">{icon}</span>
+        <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-dim">{icon}</span>
       )}
       <input {...props} className={cn(inputClass, icon && "pl-10", className)} />
     </div>
@@ -75,7 +84,7 @@ export function PasswordField({
           type="button"
           aria-label={show ? "Hide password" : "Show password"}
           onClick={() => setShow((s) => !s)}
-          className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-muted-foreground"
+          className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-dim"
         >
           {show ? <EyeOff size={16} strokeWidth={2} /> : <Eye size={16} strokeWidth={2} />}
         </button>
@@ -87,7 +96,7 @@ export function PasswordField({
 export function SocialAuth({ onContinue }: { onContinue: () => void }) {
   return (
     <>
-      <div className="my-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+      <div className="my-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-widest text-dim">
         <span className="h-px flex-1 bg-border" />
         or continue with
         <span className="h-px flex-1 bg-border" />
@@ -96,18 +105,18 @@ export function SocialAuth({ onContinue }: { onContinue: () => void }) {
         <button
           type="button"
           onClick={onContinue}
-          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card px-3 py-3 text-sm font-semibold text-foreground hover:bg-muted"
+          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border-[1.5px] border-primary bg-transparent px-3 py-3 text-sm font-semibold text-white hover:bg-primary/15"
         >
-          <GoogleMark />
-          Google
+          <AppleMark />
+          Apple
         </button>
         <button
           type="button"
           onClick={onContinue}
-          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card px-3 py-3 text-sm font-semibold text-foreground hover:bg-muted"
+          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border-[1.5px] border-primary bg-transparent px-3 py-3 text-sm font-semibold text-white hover:bg-primary/15"
         >
-          <AppleMark />
-          Apple
+          <GoogleMark />
+          Google
         </button>
       </div>
     </>
